@@ -1,5 +1,5 @@
 %%
-function [total_time_used,start_time,end_time] = Extract_Timestamps(filename)
+function [total_time_used,start_time,end_time] = Extract_Timestamps(filename,display)
 %%
 %
 % This Matlab code extracts timestamps from a log file and calculates the duration of time covered by those timestamps.
@@ -50,12 +50,14 @@ start_time.Month = start_date.Month;
 start_time.Day = start_date.Day;
 end_time.Month = end_date.Month;
 end_time.Day = end_date.Day;
-
-disp(['Start Date: ' datestr(start_date)]);
-disp(['Start Time: ' datestr(start_time, 'HH:MM:SS PM')]);
-disp(['End Date: ' datestr(end_date)]);
-disp(['End Time: ' datestr(end_time, 'HH:MM:SS PM')]);
-
 total_time_used = end_time - start_time;
-disp(['Total Duration: ' datestr(total_time_used,'HH:MM:SS')])
+
+if display
+    disp(['Start Date: ' datestr(start_date)]);
+    disp(['Start Time: ' datestr(start_time, 'HH:MM:SS PM')]);
+    disp(['End Date: ' datestr(end_date)]);
+    disp(['End Time: ' datestr(end_time, 'HH:MM:SS PM')]);
+
+    disp(['Total Duration: ' datestr(total_time_used,'HH:MM:SS')])
+end
 end
