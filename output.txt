@@ -1,0 +1,518 @@
+File MosaicBatchLog-01Mar2023-1847.log:
+Start Date: 01-Mar-2023
+Start Time:  6:47:54 PM
+End Date: 01-Mar-2023
+End Time:  6:48:10 PM
+Total Duration: 00:00:16
+
+File MosaicBatchLog-01Mar2023-1849.log:
+Start Date: 01-Mar-2023
+Start Time:  6:49:28 PM
+End Date: 01-Mar-2023
+End Time:  6:51:19 PM
+Total Duration: 00:01:51
+
+File MosaicBatchLog-01Mar2023-1904.log:
+Start Date: 01-Mar-2023
+Start Time:  7:04:58 PM
+End Date: 02-Mar-2023
+End Time:  9:13:45 AM
+Total Duration: 14:08:47
+
+File MosaicBatchLog-02Mar2023-1536.log:
+Start Date: 02-Mar-2023
+Start Time:  3:36:24 PM
+End Date: 02-Mar-2023
+End Time:  3:37:24 PM
+Total Duration: 00:01:00
+
+File MosaicBatchLog-02Mar2023-1539.log:
+Start Date: 02-Mar-2023
+Start Time:  3:39:13 PM
+End Date: 02-Mar-2023
+End Time:  3:40:12 PM
+Total Duration: 00:00:59
+
+File MosaicBatchLog-10Mar2023-1938.log:
+Start Date: 10-Mar-2023
+Start Time:  7:38:29 PM
+End Date: 10-Mar-2023
+End Time:  7:39:28 PM
+Total Duration: 00:00:59
+
+File MosaicBatchLog-10Mar2023-1947.log:
+Start Date: 10-Mar-2023
+Start Time:  7:47:45 PM
+End Date: 10-Mar-2023
+End Time:  7:48:44 PM
+Total Duration: 00:00:59
+
+File MosaicBatchLog-10Mar2023-2015.log:
+Start Date: 10-Mar-2023
+Start Time:  8:15:55 PM
+End Date: 11-Mar-2023
+End Time: 10:08:51 AM
+Total Duration: 13:52:56
+
+File MosaicBatchLog-13Mar2023-1514.log:
+Start Date: 13-Mar-2023
+Start Time:  3:14:17 PM
+End Date: 13-Mar-2023
+End Time:  3:15:14 PM
+Total Duration: 00:00:57
+
+File MosaicBatchLog-13Mar2023-1520.log:
+Start Date: 13-Mar-2023
+Start Time:  3:20:16 PM
+End Date: 13-Mar-2023
+End Time:  3:21:14 PM
+Total Duration: 00:00:58
+
+File MosaicBatchLog-13Mar2023-1528.log:
+Start Date: 13-Mar-2023
+Start Time:  3:28:11 PM
+End Date: 14-Mar-2023
+End Time:  6:07:12 AM
+Total Duration: 14:39:01
+
+File MosaicBatchLog-14Mar2023-1038.log:
+Start Date: 14-Mar-2023
+Start Time: 10:38:58 AM
+End Date: 14-Mar-2023
+End Time: 10:39:32 AM
+Total Duration: 00:00:34
+
+File MosaicBatchLog-14Mar2023-1041.log:
+Start Date: 14-Mar-2023
+Start Time: 10:41:14 AM
+End Date: 14-Mar-2023
+End Time: 10:42:13 AM
+Total Duration: 00:00:59
+
+File MosaicBatchLog-14Mar2023-1050.log:
+Start Date: 14-Mar-2023
+Start Time: 10:50:05 AM
+End Date: 15-Mar-2023
+End Time:  1:39:19 AM
+Total Duration: 14:49:14
+
+File MosaicBatchLog-15Mar2023-0205.log:
+Start Date: 15-Mar-2023
+Start Time:  2:05:49 AM
+End Date: 15-Mar-2023
+End Time:  2:06:49 AM
+Total Duration: 00:01:00
+
+File MosaicBatchLog-15Mar2023-0214.log:
+Start Date: 15-Mar-2023
+Start Time:  2:14:22 AM
+End Date: 15-Mar-2023
+End Time:  5:13:55 PM
+Total Duration: 14:59:33
+
+File MosaicBatchLog-15Mar2023-1727.log:
+Start Date: 15-Mar-2023
+Start Time:  5:28:01 PM
+End Date: 15-Mar-2023
+End Time:  5:29:01 PM
+Total Duration: 00:01:00
+
+File MosaicBatchLog-15Mar2023-1729.log:
+Start Date: 15-Mar-2023
+Start Time:  5:29:15 PM
+End Date: 15-Mar-2023
+End Time:  5:30:14 PM
+Total Duration: 00:00:59
+
+File MosaicBatchLog-15Mar2023-1730.log:
+Start Date: 15-Mar-2023
+Start Time:  5:30:28 PM
+End Date: 15-Mar-2023
+End Time:  5:31:28 PM
+Total Duration: 00:01:00
+
+File MosaicBatchLog-15Mar2023-1731.log:
+Start Date: 15-Mar-2023
+Start Time:  5:31:43 PM
+End Date: 15-Mar-2023
+End Time:  5:32:22 PM
+Total Duration: 00:00:39
+
+File MosaicBatchLog-15Mar2023-1739.log:
+Start Date: 15-Mar-2023
+Start Time:  5:39:59 PM
+End Date: 15-Mar-2023
+End Time:  5:40:59 PM
+Total Duration: 00:01:00
+
+File MosaicBatchLog-15Mar2023-1741.log:
+Start Date: 15-Mar-2023
+Start Time:  5:41:13 PM
+End Date: 15-Mar-2023
+End Time:  5:41:53 PM
+Total Duration: 00:00:40
+
+File MosaicBatchLog-15Mar2023-1742.log:
+Start Date: 15-Mar-2023
+Start Time:  5:42:12 PM
+End Date: 15-Mar-2023
+End Time:  5:43:11 PM
+Total Duration: 00:00:59
+
+File MosaicBatchLog-15Mar2023-1745.log:
+Start Date: 15-Mar-2023
+Start Time:  5:45:11 PM
+End Date: 15-Mar-2023
+End Time:  5:45:16 PM
+Total Duration: 00:00:05
+
+File MosaicBatchLog-15Mar2023-1747.log:
+Start Date: 15-Mar-2023
+Start Time:  5:47:57 PM
+End Date: 16-Mar-2023
+End Time:  7:45:10 AM
+Total Duration: 13:57:13
+
+File MosaicBatchLog-16Mar2023-1009.log:
+Start Date: 16-Mar-2023
+Start Time: 10:09:24 AM
+End Date: 16-Mar-2023
+End Time: 10:12:35 AM
+Total Duration: 00:03:11
+
+File MosaicBatchLog-16Mar2023-1013.log:
+Start Date: 16-Mar-2023
+Start Time: 10:13:11 AM
+End Date: 16-Mar-2023
+End Time: 10:13:16 AM
+Total Duration: 00:00:05
+
+File MosaicBatchLog-16Mar2023-1014.log:
+Start Date: 16-Mar-2023
+Start Time: 10:15:02 AM
+End Date: 16-Mar-2023
+End Time: 10:15:06 AM
+Total Duration: 00:00:04
+
+File MosaicBatchLog-16Mar2023-1016.log:
+Start Date: 16-Mar-2023
+Start Time: 10:16:04 AM
+End Date: 16-Mar-2023
+End Time:  1:04:40 PM
+Total Duration: 02:48:36
+
+File MosaicBatchLog-16Mar2023-1308.log:
+Start Date: 16-Mar-2023
+Start Time:  1:08:32 PM
+End Date: 17-Mar-2023
+End Time:  4:36:52 AM
+Total Duration: 15:28:20
+
+File MosaicBatchLog-17Mar2023-0437.log:
+Start Date: 17-Mar-2023
+Start Time:  4:37:10 AM
+End Date: 17-Mar-2023
+End Time:  9:56:49 AM
+Total Duration: 05:19:39
+
+File MosaicBatchLog-17Mar2023-0958.log:
+Start Date: 17-Mar-2023
+Start Time:  9:58:16 AM
+End Date: 17-Mar-2023
+End Time:  9:58:21 AM
+Total Duration: 00:00:05
+
+File MosaicBatchLog-17Mar2023-1010.log:
+Start Date: 17-Mar-2023
+Start Time: 10:10:47 AM
+End Date: 17-Mar-2023
+End Time: 10:10:52 AM
+Total Duration: 00:00:05
+
+File MosaicBatchLog-17Mar2023-1012.log:
+Start Date: 17-Mar-2023
+Start Time: 10:12:59 AM
+End Date: 17-Mar-2023
+End Time: 10:13:04 AM
+Total Duration: 00:00:05
+
+File MosaicBatchLog-17Mar2023-1014.log:
+Start Date: 17-Mar-2023
+Start Time: 10:14:50 AM
+End Date: 18-Mar-2023
+End Time: 12:10:55 AM
+Total Duration: 13:56:05
+
+File MosaicBatchLog-18Mar2023-0011.log:
+Start Date: 18-Mar-2023
+Start Time: 12:11:18 AM
+End Date: 18-Mar-2023
+End Time:  2:38:12 PM
+Total Duration: 14:26:54
+
+File MosaicBatchLog-18Mar2023-1438.log:
+Start Date: 18-Mar-2023
+Start Time:  2:38:32 PM
+End Date: 19-Mar-2023
+End Time:  3:34:35 AM
+Total Duration: 12:56:03
+
+File MosaicBatchLog-19Mar2023-0334.log:
+Start Date: 19-Mar-2023
+Start Time:  3:34:53 AM
+End Date: 19-Mar-2023
+End Time:  3:34:58 AM
+Total Duration: 00:00:05
+
+File MosaicBatchLog-20Mar2023-1813.log:
+Start Date: 20-Mar-2023
+Start Time:  6:13:09 PM
+End Date: 20-Mar-2023
+End Time:  6:15:07 PM
+Total Duration: 00:01:58
+
+File MosaicBatchLog-20Mar2023-1817.log:
+Start Date: 20-Mar-2023
+Start Time:  6:17:14 PM
+End Date: 20-Mar-2023
+End Time:  6:18:12 PM
+Total Duration: 00:00:58
+
+File MosaicBatchLog-20Mar2023-1818.log:
+Start Date: 20-Mar-2023
+Start Time:  6:18:30 PM
+End Date: 20-Mar-2023
+End Time:  6:19:29 PM
+Total Duration: 00:00:59
+
+File MosaicBatchLog-20Mar2023-1819.log:
+Start Date: 20-Mar-2023
+Start Time:  6:19:42 PM
+End Date: 20-Mar-2023
+End Time:  6:20:21 PM
+Total Duration: 00:00:39
+
+File MosaicBatchLog-20Mar2023-1822.log:
+Start Date: 20-Mar-2023
+Start Time:  6:22:22 PM
+End Date: 20-Mar-2023
+End Time:  6:23:20 PM
+Total Duration: 00:00:58
+
+File MosaicBatchLog-20Mar2023-1827.log:
+Start Date: 20-Mar-2023
+Start Time:  6:27:05 PM
+End Date: 20-Mar-2023
+End Time:  6:27:10 PM
+Total Duration: 00:00:05
+
+File MosaicBatchLog-20Mar2023-1829.log:
+Start Date: 20-Mar-2023
+Start Time:  6:29:53 PM
+End Date: 20-Mar-2023
+End Time:  6:29:57 PM
+Total Duration: 00:00:04
+
+File MosaicBatchLog-20Mar2023-1830.log:
+Start Date: 20-Mar-2023
+Start Time:  6:30:54 PM
+End Date: 20-Mar-2023
+End Time:  6:30:59 PM
+Total Duration: 00:00:05
+
+File MosaicBatchLog-20Mar2023-1832.log:
+Start Date: 20-Mar-2023
+Start Time:  6:32:47 PM
+End Date: 20-Mar-2023
+End Time:  6:32:52 PM
+Total Duration: 00:00:05
+
+File MosaicBatchLog-20Mar2023-1835.log:
+Start Date: 20-Mar-2023
+Start Time:  6:35:38 PM
+End Date: 20-Mar-2023
+End Time:  6:36:31 PM
+Total Duration: 00:00:53
+
+File MosaicBatchLog-20Mar2023-1836.log:
+Start Date: 20-Mar-2023
+Start Time:  6:36:45 PM
+End Date: 20-Mar-2023
+End Time:  6:36:50 PM
+Total Duration: 00:00:05
+
+File MosaicBatchLog-20Mar2023-1837.log:
+Start Date: 20-Mar-2023
+Start Time:  6:37:24 PM
+End Date: 20-Mar-2023
+End Time:  6:37:28 PM
+Total Duration: 00:00:04
+
+File MosaicBatchLog-20Mar2023-1838.log:
+Start Date: 20-Mar-2023
+Start Time:  6:38:56 PM
+End Date: 20-Mar-2023
+End Time:  6:39:00 PM
+Total Duration: 00:00:04
+
+File MosaicBatchLog-20Mar2023-1839.log:
+Start Date: 20-Mar-2023
+Start Time:  6:39:54 PM
+End Date: 20-Mar-2023
+End Time:  6:39:59 PM
+Total Duration: 00:00:05
+
+File MosaicBatchLog-20Mar2023-1842.log:
+Start Date: 20-Mar-2023
+Start Time:  6:43:00 PM
+End Date: 20-Mar-2023
+End Time:  6:43:05 PM
+Total Duration: 00:00:05
+
+File MosaicBatchLog-20Mar2023-1846.log:
+Start Date: 20-Mar-2023
+Start Time:  6:47:03 PM
+End Date: 20-Mar-2023
+End Time:  6:47:08 PM
+Total Duration: 00:00:05
+
+File MosaicBatchLog-20Mar2023-1849.log:
+Start Date: 20-Mar-2023
+Start Time:  6:49:20 PM
+End Date: 20-Mar-2023
+End Time:  6:49:25 PM
+Total Duration: 00:00:05
+
+File MosaicBatchLog-20Mar2023-1854.log:
+Start Date: 20-Mar-2023
+Start Time:  6:54:32 PM
+End Date: 20-Mar-2023
+End Time:  6:59:15 PM
+Total Duration: 00:04:43
+
+File MosaicBatchLog-20Mar2023-1903.log:
+Start Date: 20-Mar-2023
+Start Time:  7:03:27 PM
+End Date: 21-Mar-2023
+End Time:  9:35:17 AM
+Total Duration: 14:31:50
+
+File MosaicBatchLog-21Mar2023-0935.log:
+Start Date: 21-Mar-2023
+Start Time:  9:35:36 AM
+End Date: 22-Mar-2023
+End Time:  1:17:51 AM
+Total Duration: 15:42:15
+
+File MosaicBatchLog-22Mar2023-0118.log:
+Start Date: 22-Mar-2023
+Start Time:  1:18:18 AM
+End Date: 22-Mar-2023
+End Time:  4:41:55 PM
+Total Duration: 15:23:37
+
+File MosaicBatchLog-22Mar2023-1642.log:
+Start Date: 22-Mar-2023
+Start Time:  4:42:17 PM
+End Date: 23-Mar-2023
+End Time:  8:22:10 AM
+Total Duration: 15:39:53
+
+File MosaicBatchLog-23Mar2023-0822.log:
+Start Date: 23-Mar-2023
+Start Time:  8:22:29 AM
+End Date: 24-Mar-2023
+End Time:  1:03:58 AM
+Total Duration: 16:41:29
+
+File MosaicBatchLog-24Mar2023-0104.log:
+Start Date: 24-Mar-2023
+Start Time:  1:04:20 AM
+End Date: 24-Mar-2023
+End Time:  4:46:37 PM
+Total Duration: 15:42:17
+
+File MosaicBatchLog-24Mar2023-1646.log:
+Start Date: 24-Mar-2023
+Start Time:  4:46:56 PM
+End Date: 25-Mar-2023
+End Time:  7:59:16 AM
+Total Duration: 15:12:20
+
+File MosaicBatchLog-27Feb2023-1052.log:
+Start Date: 27-Feb-2023
+Start Time: 10:52:34 AM
+End Date: 27-Feb-2023
+End Time: 10:53:01 AM
+Total Duration: 00:00:27
+
+File MosaicBatchLog-27Feb2023-1228.log:
+Start Date: 27-Feb-2023
+Start Time: 12:28:33 PM
+End Date: 27-Feb-2023
+End Time: 12:28:51 PM
+Total Duration: 00:00:18
+
+File MosaicBatchLog-27Feb2023-1231.log:
+Start Date: 27-Feb-2023
+Start Time: 12:31:21 PM
+End Date: 27-Feb-2023
+End Time: 12:32:23 PM
+Total Duration: 00:01:02
+
+File MosaicBatchLog-27Feb2023-1234.log:
+Start Date: 27-Feb-2023
+Start Time: 12:34:10 PM
+End Date: 27-Feb-2023
+End Time: 12:41:34 PM
+Total Duration: 00:07:24
+
+File MosaicBatchLog-28Feb2023-1325.log:
+Start Date: 28-Feb-2023
+Start Time:  1:25:46 PM
+End Date: 28-Feb-2023
+End Time:  1:25:52 PM
+Total Duration: 00:00:06
+
+File MosaicBatchLog-28Feb2023-1329.log:
+Start Date: 28-Feb-2023
+Start Time:  1:29:44 PM
+End Date: 28-Feb-2023
+End Time:  1:29:49 PM
+Total Duration: 00:00:05
+
+File MosaicBatchLog-28Feb2023-1331.log:
+Start Date: 28-Feb-2023
+Start Time:  1:31:23 PM
+End Date: 28-Feb-2023
+End Time:  1:32:42 PM
+Total Duration: 00:01:19
+
+File MosaicBatchLog-28Feb2023-1339.log:
+Start Date: 28-Feb-2023
+Start Time:  1:39:42 PM
+End Date: 28-Feb-2023
+End Time:  1:45:13 PM
+Total Duration: 00:05:31
+
+File MosaicBatchLog-28Feb2023-1347.log:
+Start Date: 28-Feb-2023
+Start Time:  1:47:11 PM
+End Date: 28-Feb-2023
+End Time:  1:51:50 PM
+Total Duration: 00:04:39
+
+File MosaicBatchLog-28Feb2023-1355.log:
+Start Date: 28-Feb-2023
+Start Time:  1:55:42 PM
+End Date: 28-Feb-2023
+End Time:  1:56:53 PM
+Total Duration: 00:01:11
+
+File MosaicBatchLog-28Feb2023-1822.log:
+Start Date: 28-Feb-2023
+Start Time:  6:22:18 PM
+End Date: 01-Mar-2023
+End Time:  8:48:09 AM
+Total Duration: 14:25:51
+
