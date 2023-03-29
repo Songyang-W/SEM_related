@@ -2,6 +2,11 @@
 
 go wiki for more info
 
+# MPFI preprocessing
+
+mpfi_log_time_calculator.m is a MATLAB script that extracts timestamps from a batch of log files and calculates the total time spent. The script writes the timestamps to a text file and displays the total time spent on the console. 
+
+To use this script, place the log files in the same directory as the script and run it in MATLAB. 
 
 The Extract_Timestamps function takes a single input argument, which is the filename of a log file. The log file can contain arbitrary text, but the function expects timestamps to be in the format of "mm/dd/yyyy - hh:mm:ss AM/PM".
 
