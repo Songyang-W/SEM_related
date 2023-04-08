@@ -25,35 +25,57 @@
 %------------------------------------------------------------------------
 % Author: [Songyang]
 % Date: [04/07/2023]
-% Define tile size and overlap
+clc;clear all;close all
+folderPath = pwd;
+% Set flag for cropping
+
+% Set number of rows to crop from the top (default is 0)
+numRowsToCrop = 200; % Change to desired value if needed
+
+% Set tile size and overlap parameters
 tile_size = 10240; % Tile size (assuming square tiles)
-overlap_percentage = 0.18;
+overlap_percentage = 0.2;
 overlap = tile_size*overlap_percentage; % Overlap size (in pixels)
 
-% Get list of TIFF files in the folder
-folder_path = 'D:\downloads\SEM four tiles MPFI'; % Replace with your folder path
-tif_files = dir(fullfile(folder_path, '*.tif'));
-num_files = numel(tif_files);
-
-% Loop through each TIFF file
-output_file = fopen('output.txt', 'w'); % Open output file for writing
-for i = 1:num_files
-    tif_file = tif_files(i);
-    tif_name = tif_file.name;
-    tif_path = fullfile(folder_path, tif_name);
-    
-    % Extract row and column information from file name
-    row_col_info = sscanf(tif_name, 'Tile_r%d-c%d_');
-    row = row_col_info(1);
-    col = row_col_info(2);
-    
-    % Calculate X, Y, Z coordinates
-    x = (col - 1) * (tile_size - overlap);
-    y = (row - 1) * (tile_size - overlap);
-    z = 0;
-    
-    % Write output to file
-    fprintf(output_file, '%s\t%d\t%d\t%d\n', tif_name, x, y, z);
+% Calculate overlap taking into account the number of rows to crop
+% Calculate overlap taking into account the number of rows to crop
+if numRowsToCrop
+    overlapY = overlap -numRowsToCrop;
+    overlapX = overlap; % Keep overlap in X direction unchanged
+else
+    overlapX = overlap;
+    overlapY = overlap;
 end
 
-fclose(output_file); % Close output file
+% Get list of TIFF files in the folder
+tifFiles = dir(fullfile(folderPath, '*.tif'));
+numFiles = numel(tifFiles);
+
+% Open output text file for writing
+txtFileName = 'output1.txt'; % Change this to your desired output file name
+fid = fopen(txtFileName, 'w'); % Use 'w' flag to overwrite the file
+
+% Process each TIFF file
+for i = 1:numFiles
+    % Load TIFF image
+    tifName = tifFiles(i).name;
+    tifPath = fullfile(folderPath, tifName);
+    image = imread(tifPath);
+
+    % Extract row and column information from TIFF file name
+    [~, tifNameWithoutExt, ~] = fileparts(tifName);
+    splitName = split(tifNameWithoutExt, '_');
+    rowAndCol = split(splitName{2}, '-c');
+    row = str2double(rowAndCol{1}(2:end));
+    col = str2double(rowAndCol{2}(2:end));
+    % Calculate X, Y, Z coordinates
+    x = (col - 1) * (tile_size - overlapX);
+    y = (row - 1) * (tile_size - overlapY);
+    z = 0;
+
+    % Write coordinates to text file
+    fprintf(fid, '%s\t%d\t%d\t%d\n', tifName, x, y, z);
+end
+
+% Close the output text file
+fclose(fid);
