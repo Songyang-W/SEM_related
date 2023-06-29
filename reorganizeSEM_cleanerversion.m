@@ -6,32 +6,45 @@
 clc;clear all;close all;
 list_of_files={};
 %%
-for i =1:20
+for fileindex =1:20
 %     
-cd(strcat("W:\Projects\Connectomics\Animals\jc105\SEM\SEM datasets\MPFI\",list_of_files{i,1}))
-   % cd(strcat("G:\SEM datasets\MPFI\",list_of_files{i,1}))
-    filename_in_jcform = list_of_files{i,2};
+clear montageImage
+
+cd(strcat("W:\Projects\Connectomics\Animals\jc105\SEM\SEM datasets\MPFI\",list_of_files{fileindex,1}))
+   % cd(strcat("G:\SEM datasets\MPFI\",list_of_files{fileindex,1}))
+    %% flags
+    overlap = 10;  % Adjust the overlap value as desired
+    flip = 0;
+    make_masks=1;
+    savefigures=0;
+    %%
+    filename_in_jcform = list_of_files{fileindex,2};
     % Read file names
     filelist=dir;
     % Calculate the overlap between images in the montage
-    overlap = 10;  % Adjust the overlap value as desired
-    flip = 0;
-
+    
     % Create an empty cell array to store the newtifName values
     tifNames = {};
-    % Get row and column information from the file names
-    for i = 1:length(filelist)
-        if filelist(i).name(1) == '.' || filelist(i).name(1) == '_'||filelist(i).name(1)~='T'
+    % Create folder to save filtered images and histogram
+    if ~exist(['filteredTiff/',filename_in_jcform,'/0'], 'dir')
+        mkdir(['filteredTiff/',filename_in_jcform,'/0'])
+    end
+
+        % Get row and column information from the file names
+    skipFileID = fopen(['filteredTiff/',filename_in_jcform,'/skip.txt'], 'w');
+
+    for tifindex = 1:length(filelist)
+        if filelist(tifindex).name(1) == '.' || filelist(tifindex).name(1) == '_'||filelist(tifindex).name(1)~='T'
             continue % skip this file
         end
 
-        TileName = filelist(i).name;
+        TileName = filelist(tifindex).name;
         rowcolInfo = strsplit(TileName,'-');
         rowInfo = rowcolInfo{1}(7:end);
         colcell=strsplit(rowcolInfo{2},'_');
         colInfo = colcell{1}(2:end);
-        rowcolList(i,1) = str2num(rowInfo);
-        rowcolList(i,2) = str2num(colInfo);
+        rowcolList(tifindex,1) = str2num(rowInfo);
+        rowcolList(tifindex,2) = str2num(colInfo);
     end
 
     % Get total number of rows and columns
@@ -39,19 +52,16 @@ cd(strcat("W:\Projects\Connectomics\Animals\jc105\SEM\SEM datasets\MPFI\",list_o
     row_total = row_col_total(1);
     col_total = row_col_total(2);
 
-    % Create folder to save filtered images and histogram
-    if ~exist(['filteredTiff/',filename_in_jcform,'/0'], 'dir')
-        mkdir(['filteredTiff/',filename_in_jcform,'/0'])
-    end
+
 
     % Filter the images one by one, save the filtered image and histogram
-    for i = 1:length(filelist)
+    for tifindex = 1:length(filelist)
 
 
-        if filelist(i).name(1) == '.' || filelist(i).name(1) == '_'||filelist(i).name(1)~='T'
+        if filelist(tifindex).name(1) == '.' || filelist(tifindex).name(1) == '_'||filelist(tifindex).name(1)~='T'
             continue % skip this file
         end
-        image_name = filelist(i).name;
+        image_name = filelist(tifindex).name;
         rowcolInfo = strsplit(image_name,'-');
         rowInfo = rowcolInfo{1}(7:end);
         colcell=strsplit(rowcolInfo{2},'_');
@@ -103,9 +113,23 @@ cd(strcat("W:\Projects\Connectomics\Animals\jc105\SEM\SEM datasets\MPFI\",list_o
         if ~exist(['filteredTiff/',filename_in_jcform,'/0/',newrowName] ,'dir')
             mkdir(['filteredTiff/',filename_in_jcform,'/0/',newrowName])
         end
-%         imwrite(filtered_image,strcat('filteredTiff/',filename_in_jcform,'/0/',newrowName,'/',newtifName),'tiff');
+        if ~exist(['filteredTiff/',filename_in_jcform,'/intrasection/masks/0/',newrowName] ,'dir')
+            mkdir(['filteredTiff/',filename_in_jcform,'/intrasection/masks/0/',newrowName])
+        end
+        if sum(sum(I==0))/length(I(:,1))/length(I(1,:))>0.01
+            fprintf(skipFileID,'%s\n',newtifName);
+        end
+
+        if savefigures
+            imwrite(filtered_image,strcat('filteredTiff/',filename_in_jcform,'/0/',newrowName,'/',newtifName),'tiff');
+        end
+
+        if make_masks
+            mask_file=filtered_image~=0;
+            imwrite(mask_file,strcat('filteredTiff/',filename_in_jcform,'/intrasection/masks/0/',newrowName,'/',newrowName,'_',newcolName,'_0_b.pbm'),'pbm')
+        end
         % Store the newtifName in the tifNames cell array
-        tifNames{i} = newtifName;
+        tifNames{tifindex} = newtifName;
         % Calculate histogram and write to file
         Bin_Info = histogram(filtered_image,'BinEdges',0:1:256);
         hist_output = [Bin_Info.BinEdges(1:end-1);Bin_Info.Values];
@@ -114,12 +138,12 @@ cd(strcat("W:\Projects\Connectomics\Animals\jc105\SEM\SEM datasets\MPFI\",list_o
         fclose(fileID);
     end
     close
-
+%% other files
     imwrite(montageImage,['filteredTiff/',filename_in_jcform,'/',filename_in_jcform,'_bf_render.tif']);
     fileID = fopen(['filteredTiff/',filename_in_jcform,'/raw_images.lst'], 'w');
-    for i = 1:length(tifNames)
-        if ~isempty(tifNames{i})
-        fprintf(fileID, '%s\n', tifNames{i});
+    for rawimageIndex = 1:length(tifNames)
+        if ~isempty(tifNames{rawimageIndex})
+        fprintf(fileID, '%s\n', tifNames{rawimageIndex});
         end
     end
     fclose(fileID);
@@ -136,7 +160,6 @@ cd(strcat("W:\Projects\Connectomics\Animals\jc105\SEM\SEM datasets\MPFI\",list_o
     fclose(sizeFileID);
 
     % Create the skip.txt file
-    skipFileID = fopen(['filteredTiff/',filename_in_jcform,'/skip.txt'], 'w');
     fclose(skipFileID);
 
     copyfile('D:\downloads\limits.p', ['filteredTiff/',filename_in_jcform,'/']);
