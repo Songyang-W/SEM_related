@@ -2,10 +2,11 @@ import os
 import sys
 import numpy as np
 import cv2
+import npimage
 
-def filter_image(image_path, flip):
+def filter_image(image_path):
     # Read and filter the image
-    I = cv2.flip(cv2.imread(image_path, cv2.IMREAD_GRAYSCALE), 0) if flip else cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+    I = cv2.flip(cv2.imread(image_path, cv2.IMREAD_GRAYSCALE), 0)
     I_ds = cv2.resize(I, (int(I.shape[1]/100), int(I.shape[0]/100)))
     return I_ds, I
 
@@ -19,6 +20,7 @@ def save_filtered_image(image, save_path):
 def create_mask(image, save_path):
     mask = image == 0
     cv2.imwrite(save_path, mask.astype(np.uint8))
+    #npimage.save(save_path,mask)
 
 def calculate_histogram(image):
     hist_output, _ = np.histogram(image.flatten(), bins=np.arange(257))
@@ -26,7 +28,9 @@ def calculate_histogram(image):
     return hist_output
 
 # Define the path to the directory containing the original images
-directory = "W:/Projects/Connectomics/Animals/jc105/SEM/SEM datasets/MPFI"
+# directory = "W:/Projects/Connectomics/Animals/jc105/SEM/SEM datasets/MPFI"
+directory = "/mnt/emlodebu2_tank1/SEM/"
+save_directory = "/n/data3/hms/neurobio/htem/temcagt/datasets/jc105_r214/sections"
 
 # Get the command-line arguments
 flip = sys.argv[1] == "True"
@@ -83,7 +87,13 @@ for tif_index in range(len(file_list)):
     new_hist_name = f"{new_row_name}_{new_col_name}_0_b.hst"
         
     # Read and filter the image
-    I_ds, I = filter_image(image_name, flip)
+    #I_ds, I = filter_image(image_name, flip)
+    
+    if flip:
+        I_ds, I = 255-filter_image(image_name)
+        I_ds_mask, I_mask = filter_image(image_name)
+    else:
+        I_ds, I = filter_image(image_name)
             
     # Calculate the position of the image in the montage based on row and column information
     montage_row = row_total+1-int(row_info) + 1  # Add 1 to account for Python's 0-based indexing
@@ -108,45 +118,51 @@ for tif_index in range(len(file_list)):
     montage_image[montage_pos_row:montage_pos_row+image_size[0], montage_pos_col:montage_pos_col+image_size[1]] = I_ds
             
     # Save the filtered image
-    create_folder_if_not_exists(f"filteredTiff/{filename_in_jcform}/0/{new_row_name}")
-    create_folder_if_not_exists(f"filteredTiff/{filename_in_jcform}/intrasection/masks/0/{new_row_name}")
+    create_folder_if_not_exists(f"{save_directory}/{filename_in_jcform}/0/{new_row_name}")
+    create_folder_if_not_exists(f"{save_directory}/{filename_in_jcform}/intrasection/masks/0/{new_row_name}")
             
     if save_figures:
-        save_filtered_image(I, f"filteredTiff/{filename_in_jcform}/0/{new_row_name}/{new_tif_name}")
+        save_filtered_image(I, f"{save_directory}/{filename_in_jcform}/0/{new_row_name}/{new_tif_name}")
             
     if make_masks:
-        create_mask(I, f"filteredTiff/{filename_in_jcform}/intrasection/masks/0/{new_row_name}/{new_row_name}_{new_col_name}_0_b.pbm")
-            
+        if flip:
+            create_mask(I_mask, f"{save_directory}/{filename_in_jcform}/intrasection/masks/0/{new_row_name}/{new_row_name}_{new_col_name}_0_b.pbm")
+        else:
+            create_mask(I, f"{save_directory}/{filename_in_jcform}/intrasection/masks/0/{new_row_name}/{new_row_name}_{new_col_name}_0_b.pbm")
+
+   
+    
     # Store the new_tif_name in the tif_names list
     tif_names.append(new_tif_name)
             
     # Calculate histogram and write to file
     hist_output = calculate_histogram(I)
-    with open(f"filteredTiff/{filename_in_jcform}/0/{new_row_name}/{new_hist_name}", 'w') as file_id:
+    with open(f"{save_directory}/{filename_in_jcform}/0/{new_row_name}/{new_hist_name}", 'w') as file_id:
         np.savetxt(file_id, hist_output, fmt='%d %d')
-    
+
+    print(f"finish {new_tif_name}")   
 # Save the montage image
-cv2.imwrite(f"filteredTiff/{filename_in_jcform}/{filename_in_jcform}_bf_render.tif", montage_image)
+cv2.imwrite(f"{save_directory}/{filename_in_jcform}/{filename_in_jcform}_bf_render.tif", montage_image)
 
 # Save the montage image
-cv2.imwrite(f"filteredTiff/{filename_in_jcform}/{filename_in_jcform}_bf_render.tif", montage_image)
+cv2.imwrite(f"{save_directory}/{filename_in_jcform}/{filename_in_jcform}_bf_render.tif", montage_image)
     
 # Create the raw_images.lst file
-with open(f"filteredTiff/{filename_in_jcform}/raw_images.lst", 'w') as file_id:
+with open(f"{save_directory}/{filename_in_jcform}/raw_images.lst", 'w') as file_id:
     for raw_image_index in range(len(tif_names)):
         if tif_names[raw_image_index] != "":
             file_id.write(f"{tif_names[raw_image_index]}\n")
     
 # Create the size.txt file
-with open(f"filteredTiff/{filename_in_jcform}/size.txt", 'w') as size_file_id:
+with open(f"{save_directory}/{filename_in_jcform}/size.txt", 'w') as size_file_id:
     size_file_id.write(f"1, {row_total}, 1, {col_total}\n")
     
 # Create the size file
 size_str = f"{row_total} {col_total}"
-with open(f"filteredTiff/{filename_in_jcform}/size", 'w') as size_file_id:
+with open(f"{save_directory}/{filename_in_jcform}/size", 'w') as size_file_id:
     size_file_id.write(size_str)
     
     
 # Copy files
-os.system("cp D:/downloads/limits.p filteredTiff/{filename_in_jcform}/")
-os.system("cp D:/downloads/histograms.p filteredTiff/{filename_in_jcform}/")
+#os.system("cp D:/downloads/limits.p filteredTiff/{filename_in_jcform}/")
+#os.system("cp D:/downloads/histograms.p filteredTiff/{filename_in_jcform}/")
