@@ -166,3 +166,6 @@ with open(f"{save_directory}/{filename_in_jcform}/size", 'w') as size_file_id:
 # Copy files
 #os.system("cp D:/downloads/limits.p filteredTiff/{filename_in_jcform}/")
 #os.system("cp D:/downloads/histograms.p filteredTiff/{filename_in_jcform}/")
+
+os.system("cp /n/data3/hms/neurobio/htem/temcagt/datasets/jc105_r214/sections/220917040105_jc105_2035/limits.p {save_directory}/{filename_in_jcform}/")
+os.system("cp /n/data3/hms/neurobio/htem/temcagt/datasets/jc105_r214/sections/220917040105_jc105_2035/histograms.p {save_directory}/{filename_in_jcform}/")
