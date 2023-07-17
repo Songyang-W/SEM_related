@@ -90,7 +90,7 @@ for tif_index in range(len(file_list)):
     #I_ds, I = filter_image(image_name, flip)
     
     if flip:
-        I_ds, I = 255-filter_image(image_name)
+        I_ds, I = np.invert(filter_image(image_name))
         I_ds_mask, I_mask = filter_image(image_name)
     else:
         I_ds, I = filter_image(image_name)
@@ -98,23 +98,23 @@ for tif_index in range(len(file_list)):
     # Calculate the position of the image in the montage based on row and column information
     montage_row = row_total+1-int(row_info) + 1  # Add 1 to account for Python's 0-based indexing
     montage_col = int(col_info) + 1  # Add 1 to account for Python's 0-based indexing
-            
-    # Calculate the overlap between images in the montage
     overlap = 10  # Adjust the overlap value as desired
             
     # Calculate the montage size based on the image size and overlap
     image_size = I_ds.shape
+    print(image_size)
     montage_size = (image_size[0] - (overlap * 2), image_size[1] - (overlap * 2))
             
     # Create a blank montage if it doesn't exist yet
     if montage_image is None:
-        montage_image = np.zeros((row_total * (montage_size[0] + overlap) + overlap, col_total * (montage_size[1] + overlap) + overlap), dtype=np.uint8)
-    
+        montage_image = np.zeros(((row_total+1) * (montage_size[0] + overlap) + overlap, (col_total+1) * (montage_size[1] + overlap) + overlap), dtype=np.uint8)
+    #    print(montage_image.shape)
     # Calculate the position to place the downsampled image in the montage
     montage_pos_row = (montage_row - 1) * montage_size[0]
     montage_pos_col = (montage_col - 1) * montage_size[1]
             
     # Insert the downsampled image into the montage
+    
     montage_image[montage_pos_row:montage_pos_row+image_size[0], montage_pos_col:montage_pos_col+image_size[1]] = I_ds
             
     # Save the filtered image
@@ -140,7 +140,7 @@ for tif_index in range(len(file_list)):
     with open(f"{save_directory}/{filename_in_jcform}/0/{new_row_name}/{new_hist_name}", 'w') as file_id:
         np.savetxt(file_id, hist_output, fmt='%d %d')
 
-    print(f"finish {new_tif_name}")   
+#    print(f"finish {new_tif_name}")   
 # Save the montage image
 cv2.imwrite(f"{save_directory}/{filename_in_jcform}/{filename_in_jcform}_bf_render.tif", montage_image)
 
@@ -167,5 +167,5 @@ with open(f"{save_directory}/{filename_in_jcform}/size", 'w') as size_file_id:
 #os.system("cp D:/downloads/limits.p filteredTiff/{filename_in_jcform}/")
 #os.system("cp D:/downloads/histograms.p filteredTiff/{filename_in_jcform}/")
 
-os.system("cp /n/data3/hms/neurobio/htem/temcagt/datasets/jc105_r214/sections/220917040105_jc105_2035/limits.p {save_directory}/{filename_in_jcform}/")
-os.system("cp /n/data3/hms/neurobio/htem/temcagt/datasets/jc105_r214/sections/220917040105_jc105_2035/histograms.p {save_directory}/{filename_in_jcform}/")
+#os.system("cp /n/data3/hms/neurobio/htem/temcagt/datasets/jc105_r214/sections/220917040105_jc105_2035/limits.p {save_directory}/{filename_in_jcform}/")
+#os.system("cp /n/data3/hms/neurobio/htem/temcagt/datasets/jc105_r214/sections/220917040105_jc105_2035/histograms.p {save_directory}/{filename_in_jcform}/")
