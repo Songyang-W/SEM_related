@@ -13,7 +13,7 @@ def filter_image(image_path):
 def create_folder_if_not_exists(folder_path):
     if not os.path.exists(folder_path):
         os.makedirs(folder_path)
-
+        print("folder created ",folder_path)
 def save_filtered_image(image, save_path):
     cv2.imwrite(save_path, image)
 
@@ -99,6 +99,11 @@ for tif_index in range(len(file_list)):
     montage_row = row_total+1-int(row_info) + 1  # Add 1 to account for Python's 0-based indexing
     montage_col = int(col_info) + 1  # Add 1 to account for Python's 0-based indexing
     overlap = 10  # Adjust the overlap value as desired
+
+    # Save the filtered image
+    create_folder_if_not_exists(f"{save_directory}/{filename_in_jcform}/0/")
+    create_folder_if_not_exists(f"{save_directory}/{filename_in_jcform}/0/{new_row_name}")
+    create_folder_if_not_exists(f"{save_directory}/{filename_in_jcform}/intrasection/masks/0/{new_row_name}")
             
     # Calculate the montage size based on the image size and overlap
     image_size = I_ds.shape
@@ -118,6 +123,7 @@ for tif_index in range(len(file_list)):
     montage_image[montage_pos_row:montage_pos_row+image_size[0], montage_pos_col:montage_pos_col+image_size[1]] = I_ds
             
     # Save the filtered image
+    create_folder_if_not_exists(f"{save_directory}/{filename_in_jcform}/0/")
     create_folder_if_not_exists(f"{save_directory}/{filename_in_jcform}/0/{new_row_name}")
     create_folder_if_not_exists(f"{save_directory}/{filename_in_jcform}/intrasection/masks/0/{new_row_name}")
             
