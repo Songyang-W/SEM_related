@@ -15,6 +15,7 @@
 1. run **create_montages_cloudvolume.py** (located /n/data3/hms/neurobio/htem/temcagt/datasets/jc105_r214)once before uploading (create a new volume)
 2. run upload_cloud.job to call **upload_montages_to_cloudvolume.py **in sections/python_codes/
 
+test with one section
 `cd /n/data3/hms/neurobio/htem/temcagt/datasets/jc105_r214/sections/`
 `cp 220624170816_jc105_1345/intrasection/jobs/fullres_render_jobs/srun.sh 220625132547_jc105_1344/intrasection/jobs/fullres_render_jobs/`
 `cp 220624170816_jc105_1345/intrasection/jobs/fullres_render_jobs/upload_cloud.job 220625132547_jc105_1344/intrasection/jobs/fullres_render_jobs/`
@@ -22,6 +23,7 @@
 `
 `./220625132547_jc105_1344/intrasection/jobs/srun_fullres_render.sh`
 
+do a bunch
 `for i in $(listAcquisitions jc105 1346 1364); do cp 220624170816_jc105_1345/intrasection/jobs/fullres_render_jobs/srun.sh $i/intrasection/jobs/fullres_render_jobs/; cp 220624170816_jc105_1345/intrasection/jobs/fullres_render_jobs/upload_cloud.job $i/intrasection/jobs/fullres_render_jobs/; done`
 `
 `
